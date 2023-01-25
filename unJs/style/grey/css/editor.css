@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+@import "reset.css";
+
+.u_editArea {
+	cursor: pointer;
+	padding:5px;
+	height: 100px;
+	border: solid 1px #cccccc;
+	background: url(../images/text_bg.gif) repeat-x top;
+	background-color: #fff;
+	overflow-y: auto;
+}

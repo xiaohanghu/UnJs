@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>unJs example</title>
+<script type="text/javascript" src="../js/unJs/un_core.js"></script>
+<script type="text/javascript" src="../js/unJs/window.js"></script>
+<script type="text/javascript" src="../js/unJs/tabTree.js"></script>
+<link href="../style/css/index_layout.css" type="text/css"
+	rel="stylesheet" />
+<link href="../js/unJs/style/grey/css/tabTree.css" type="text/css"
+	rel="stylesheet" />
+<link href="../js/unJs/style/grey/css/window.css" type="text/css"
+	rel="stylesheet" />
+<script type="text/javascript">
+    /*---------------------------------------**/
+
+
+
+    Un.ready(function() {
+
+    	Un.BLANK_IMAGE_URL = "../js/unJs/style/blank.gif";
+
+        var renderRed = function(text) {
+            var e = Un.Table.Td.addTitle(text);
+            e.addClass('red');
+            return e;
+        }
+
+        var model = [ {
+            text : '序号',
+            width : 220,
+            renderer : Un.Table.Td.addTitle
+        }, {
+            text : '承办庭室',
+            width : 70,
+            renderer : renderRed
+        }, {
+            text : '承办人',
+            width : 65,
+            renderer : renderRed
+        }, {
+            text : '议题名称',
+            renderer : renderRed
+        }, {
+            text : '状态',
+            width : 50
+        }, {
+            text : '计划开始时间',
+            width : 165
+        }, {
+            text : '数量',
+            width : 45
+        } ];
+
+        var head = new Un.TabTree.Head( {
+            model : model
+        });
+        var root = new Un.TabTree.Tr( {
+            id : '001'
+        });
+        var tabTree = new Un.TabTree( {
+            renderTo : 'con_div',
+            head : head,
+            root : root,
+            //trLively : true,
+            //canActive : true,
+            showIndex : true
+        });
+
+        var array = [ {
+            "level" : "2",
+            includeYtNum : 1,
+            "text" : "2010年01月20日",
+            "children" : [ {
+                "level" : "3",
+                includeYtNum : 0,
+                "text" : "审判委员会1第1次总第2次会议;;;;通知已发;2009年9月23日 15时30分",
+                canActive : true,
+                leaf : true,
+                "children" : []
+            } ]
+        }, {
+            "level" : "2",
+            includeYtNum : 1,
+            "text" : "2010年01月22日",
+            "children" : [ {
+                "level" : "3",
+                includeYtNum : 1,
+                "text" : "审判委员会1第1次总第2次会议;;;;通知已发;2010年01月22日 00时00分",
+                canActive : true,
+                "children" : [ {
+                    "level" : "4",
+                    "leaf" : true,
+                    "text" : "刑一庭 ;范大川;(2009)辽刑3终字第100023号"
+                } ]
+            } ]
+        }, {
+            "level" : "2",
+            includeYtNum : 1,
+            "text" : "2010年02月07日",
+            "children" : [ {
+                "level" : "3",
+                "leaf" : true,
+                canActive : true,
+                includeYtNum : 0,
+                "text" : "审判委员会1第1次总第2次会议;;;;通知已发;2010年02月07日 00时00分",
+                "children" : []
+            } ]
+        } ]
+
+        root.loadData(array);
+
+        var win = new Un.Window( {
+          renderTo:'center',
+          title : 'UN.window',
+          modal : true,
+          width : 800,
+          height : 400,
+          closeMethod:'hide'
+        });
+
+
+        var win2 = new Un.Window( {
+            title : 'window2',
+            modal : true,
+            width : 600,
+            height : 300
+          });
+
+        var ls=function(){alert(this.title);return false;}
+        //win.addCustomListener('beforeclose',ls,win2);
+
+        win.addContent(tabTree);
+
+        var btn = Un.Element.get('show');
+        btn.addEventListener('click', win.show, win);
+        win.show();
+        //win2.show();
+    });
+</script>
+<style type="text/css">
+.con_div {
+	margin: 50px;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.green {
+	color: #72c300;
+}
+
+.red {
+	color: #ff8800;
+}
+
+html,body {
+	background: #ededed;
+}
+
+.top {
+	background: #fff url(../style/images/logo.gif) no-repeat center 10px;
+}
+
+.top .content {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-bottom: solid 1px #ccc;
+}
+
+.top .content h3 {
+	color: #58b6cd;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0 0 35px 130px;
+}
+
+.center {
+
+}
+
+.center .content {
+	text-align: center;
+}
+
+.center .text {
+	margin: 30px 0;
+}
+
+.center .text span {
+	margin: 0 30px;
+}
+
+.bottom {
+	background: #fff;
+	text-align: center;
+}
+
+.bottom .content {
+	border-top: solid 1px #ccc;
+	padding: 10px 50px;
+}
+
+.bottom .left {
+	margin: 0 100px;
+}
+
+.bottom .left a {
+	margin: 0 5px;
+}
+
+.bottom .right {
+	margin: 0 100px;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+<div class="content">
+<h3>Huxh.un</h3>
+</div>
+</div>
+<div id="center" class="center">
+
+<div class="content">
+<div class="text"><span>test in:ie6,ie7,ie8,firefox</span>
+<button id="show">showWindow</button>
+<select></select></div>
+</div>
+
+</div>
+<div class="bottom">
+<div class="content"></div>
+<span class="left"><a href="http://hi.baidu.com/huxiaohang"
+	title="Home">Blog</a>|<a href="http://hi.baidu.com/huxiaohang/profile"
+	title="About">About</a> </span><span class="right"> <span class="green">HUHANG1986</span>
+&copy; 2010 All Rights Reserved</span></div>
+
+</body>
+</html>

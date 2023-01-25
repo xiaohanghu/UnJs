@@ -1,0 +1,127 @@
+@CHARSET "UTF-8";
+
+@import "reset.css";
+
+.u_tree {
+	
+}
+
+.u_tree_h {
+	height: 18px;
+	white-space: nowrap;
+}
+
+.u_tree_text {
+	float:left;
+	width:20px;
+	margin: 0 3px;
+	line-height: 18px;
+	_position: absolute;
+}
+
+.u_tree_icon {
+	float: left;
+	width: 16px;
+	height: 18px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.u_tree_h {
+	
+}
+
+/*--branch-------------------------------*/
+.u_tree_h .u_tree_node_icon {
+	background-image: url(../images/tree/folder-open.gif);
+}
+
+.u_tree_h .u_tree_node_icon_e {
+	background-image: url(../images/tree/folder.gif);
+}
+
+.u_tree_empty .u_tree_h .u_tree_node_icon {
+	background-image: url(../images/tree/folder.gif);
+}
+
+.u_tree_h .u_tree_bar {
+	cursor: pointer;
+	background-image: url(../images/tree/T_minus.gif);
+}
+
+.u_tree_h .u_tree_bar_e {
+	background-image: url(../images/tree/T_plus.gif);
+}
+
+.u_tree_h_last .u_tree_bar {
+	background-image: url(../images/tree/L_minus.gif);
+}
+
+.u_tree_h_last .u_tree_bar_e {
+	background-image: url(../images/tree/L_plus.gif);
+}
+
+.u_tree_empty .u_tree_bar {
+	cursor: normal;
+	background-image: url(../images/tree/T.gif);
+}
+
+.u_tree_empty .u_tree_h_last .u_tree_bar {
+	cursor: normal;
+	background-image: url(../images/tree/L.gif);
+}
+
+/*--leaf-------------------------------*/
+.u_tree_leaf .u_tree_h .u_tree_node_icon {
+	background-image: url(../images/tree/file.gif);
+}
+
+.u_tree_leaf .u_tree_h .u_tree_bar {
+	cursor: normal;
+	background-image: url(../images/tree/T.gif);
+}
+
+.u_tree_leaf .u_tree_h_last .u_tree_bar {
+	cursor: normal;
+	background-image: url(../images/tree/L.gif);
+}
+
+/*--root-------------------------------*/
+.u_tree_h_root .u_tree_bar {
+	background-image: url(../images/tree/minus.gif);
+}
+
+.u_tree_h_root .u_tree_bar_e {
+	background-image: url(../images/tree/plus.gif);
+}
+
+/*---------------------------------*/
+.u_tree_line {
+	background-image: url(../images/tree/I.gif);
+}
+
+.u_tree_h .u_checkbox {
+	background-position: center 3px;
+}
+
+.u_tree_h .u_radio {
+	background-position: center 3px;
+}
+
+/*--checkbox-------------------------------*/
+.u_checkbox {
+	background-image: url(../images/checkbox.gif);
+}
+
+.u_checkbox_checked {
+	background-image: url(../images/checkbox_checked.gif);
+}
+
+/*--radio-------------------------------*/
+.u_radio {
+	background-image: url(../images/radio.gif);
+}
+
+.u_radio_checked {
+	background-image: url(../images/radio_checked.gif);
+}

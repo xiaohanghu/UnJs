@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>example window</title>
+<script type="text/javascript" src="../../core.js"></script>
+<script type="text/javascript" src="../../window.js"></script>
+<link href="../../style/grey/css/window.css" type="text/css"
+	rel="stylesheet" />
+<script type="text/javascript">
+    /*---------------------------------------**/
+    Un.ready( function() {
+
+        var win = new Un.Window( {
+            title : 'UN.window',
+            closeMethod:'hide'
+        });
+
+        var code=Un.Element.get('code');
+        win.addContent(code);
+        win.show();
+
+       function openWin(){
+           var win = new Un.Window( {
+               title : 'UN.window',
+	           closeMethod:'hide'
+	       });
+           win.show();
+       }
+       openWin();
+       win.active();
+
+        var btn = Un.Element.get('show');
+        btn.addEventListener('click', win.show, win);
+
+        var btn_openWin = Un.Element.get('openWin');
+        btn_openWin.addListener('click', openWin);
+    });
+</script>
+<style type="text/css">
+body {
+	background: #ededed;
+}
+
+code {
+	font-size: 13px;
+	line-height: 15px;
+}
+
+pre.code {
+	padding: 0 20px;
+}
+
+.content {
+	padding: 20px;
+}
+
+.content_iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: red;
+}
+</style>
+</head>
+<body>
+<div class="content">
+<button id="show">showCode</button>
+<button id="openWin">openWindow</button>
+&nbsp;&nbsp;<a href="../window.html">帮助</a> <pre class="code" id="code">
+<code>
+    var win = new Un.Window( {
+        title : 'UN.window',
+        closeMethod:'hide'
+    });
+
+    var code=Un.Element.get('code');
+    win.addContent(code);
+    win.show();
+</code>
+</pre></div>
+</body>
+</html>

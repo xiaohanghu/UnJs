@@ -1,0 +1,183 @@
+@CHARSET "UTF-8";
+
+@import "reset.css";
+
+.u_win {
+	position: absolute;
+	/*修正在body插入window后导致document.documentElement.scrollHeight值变大[ie6]*/
+	top: 0;
+	background: red;
+}
+
+.u_win_shadow {
+	-moz-box-shadow: 0 0 4px #cccccc;
+	-webkit-box-shadow: 0 0 4px #cccccc;
+}
+
+.u_win_bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	_height: 100%;
+	_width: 100%;
+	background: #f7f7f5;
+	border: solid 1px #e4e4e2;
+}
+
+.u_win_head {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	_height: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	color: #75756e;
+	padding: 0 10px;
+	line-height: 20px;
+	cursor: move;
+	overflow: hidden; /*fireFox下的setCapture*/
+}
+
+.u_win_body {
+	border: solid 1px #e8e8e8;
+	position: absolute;
+	background: #fff;
+	overflow: auto;
+}
+
+.u_win_body_content {
+	height: 100%;
+}
+
+.u_win_bar {
+	position: absolute;
+	overflow: hidden; /*ie6最低div高度,fireFox下的setCapture*/
+}
+
+.u_win_bar_N {
+	top: 0;
+	right: 0;
+	left: 0;
+	cursor: n-resize;
+	_width: 100%;
+}
+
+.u_win_bar_E {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	cursor: e-resize;
+	_height: 100%;
+}
+
+.u_win_bar_S {
+	right: 0;
+	bottom: 0;
+	left: 0;
+	bottom: 0;
+	cursor: n-resize;
+	_width: 100%;
+}
+
+.u_win_bar_W {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	cursor: e-resize;
+	_height: 100%;
+}
+
+.u_win_bar_NW {
+	top: 0;
+	left: 0;
+	cursor: nw-resize;
+}
+
+.u_win_bar_NE {
+	top: 0;
+	right: 0;
+	cursor: ne-resize;
+}
+
+.u_win_bar_SE {
+	right: 0;
+	bottom: 0;
+	cursor: se-resize;
+}
+
+.u_win_bar_SW {
+	bottom: 0;
+	left: 0;
+	cursor: sw-resize;
+}
+
+.u_shadow_ie {
+	position: absolute;
+	z-index: -1;
+	background: #444;
+	/*ie6加上filter后不能获得_width:100%;*/
+	_width: 100%;
+	top: -4px;
+	right: 4px;
+	bottom: 4px;
+	left: -4px;
+	filter: progid:DXImageTransform.Microsoft.alpha(opacity = 20)
+		progid:DXImageTransform.Microsoft.Blur(pixelradius = 4);
+}
+
+.un_content_iframe {
+	position: absolute;
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+
+.un_title {
+	float: left;
+	margin-top: 6px;
+}
+
+/*-----btn-----------------*/
+
+.u_btn_close {
+	margin: 10px 3px 0 13px;
+	float: right;
+	width: 12px;
+	height: 11px;
+	cursor: pointer;
+	background: url(../images/close.gif) no-repeat center center;
+}
+
+.u_btn_close_over {
+	background: url(../images/close_over.gif) no-repeat center center;
+}
+
+.u_btn_max {
+	margin: 10px 0 0 13px;
+	float: right;
+	width: 12px;
+	height: 11px;
+	cursor: pointer;
+	background: url(../images/max.gif) no-repeat center center;
+}
+
+.u_btn_max_over {
+	background: url(../images/max_over.gif) no-repeat center center;
+}
+
+.u_btn_restore {
+	margin: 10px 0 0 13px;
+	float: right;
+	width: 12px;
+	height: 11px;
+	cursor: pointer;
+	background: url(../images/restore.gif) no-repeat center center;
+}
+
+.u_btn_restore_over {
+	background: url(../images/restore_over.gif) no-repeat center center;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>unJs example</title>
+<script type="text/javascript" src="../js/unJs/un_core.js"></script>
+<script type="text/javascript" src="../js/unJs/window.js"></script>
+<script type="text/javascript" src="../js/unJs/tabTree.js"></script>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<link href="../style/css/index_layout.css" type="text/css" rel="stylesheet" />
+<link href="../js/unJs/style/grey/css/tabTree.css" type="text/css"
+	rel="stylesheet" />
+<link href="../js/unJs/style/grey/css/window.css" type="text/css"
+	rel="stylesheet" />
+<script type="text/javascript">
+    /*---------------------------------------**/
+    Un.ready( function() {
+
+
+    	var div_un = Un.Box.get('div_un');
+    	//div_un.setOpacity(50);
+    	//alert(div_un.getOffsetHeight());
+
+    	var div_jquery=$('#div_jquery');
+    	//div_jquery.css('background','green');
+    	var up=function(){
+        	//div_jquery.hide(1000);
+    		//div_jquery.slideUp(1000);
+    		div_jquery.fadeOut(1000);
+        }
+        var down = function(){
+    		//div_jquery.show(1000);
+        	//div_jquery.slideDown(1000);
+        	div_jquery.fadeIn(1000);
+        };
+
+        //up();
+        //div_un.hideAnimate();
+        var date=new Date()
+        var t = date.getTime();
+
+        var i1=0
+        var add1=function(){
+        	div_un.setStyle('background','red');
+        }
+        var i2=0
+        var add2=function(){
+        	div_jquery.css('background','red');
+        }
+
+        //window.setTimeout(add1,1000);
+        //window.setInterval(add2,1000);
+
+    	hideBtn = Un.Element.get('hide');
+        hideBtn.addListener('click',div_un.hideAnimate,div_un);
+        hideBtn.addListener('click',up);
+        showBtn = Un.Element.get('show');
+        showBtn.addListener('click',div_un.showAnimate,div_un);
+        showBtn.addListener('click',down);
+
+    });
+
+
+</script>
+<style type="text/css">
+.layout_btn {
+	padding: 10px;
+	text-align: center;
+}
+
+.btn {
+	margin: 0 10px;
+}
+
+.move {
+	height: 500px;
+	width: 500px;
+	border: solid 3px green;
+}
+
+.content {
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.layout_un,.layout_jquery {
+	position: absolute;
+	height: 520px;
+	width: 520px;
+	margin-top: 20px;
+}
+
+.layout_jquery {
+	left: 600px;
+}
+
+.msg {
+	padding: 10px;
+	height: 30px;
+}
+</style>
+</head>
+
+<body>
+<div class="layout_btn">
+<button id="hide" class="btn">hide</button>
+<button id="show" class="btn">show</button>
+</div>
+<div class="content">
+<div class="layout_un">
+<h3>un</h3>
+<div id="msg_un" class="msg"></div>
+<div id="div_un" class="move">un</div>
+
+</div>
+<div class="layout_jquery">
+<h3>jquery</h3>
+<div id="msg_jquery" class="msg"></div>
+<div id="div_jquery" class="move">jquery</div>
+</div>
+</div>
+</body>
+</html>

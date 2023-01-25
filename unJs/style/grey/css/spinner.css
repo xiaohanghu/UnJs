@@ -1,0 +1,77 @@
+@CHARSET "UTF-8";
+
+@import "reset.css";
+
+.u_input {
+	border: solid 1px #c7c7c7;
+	background: url(../images/text_bg.gif) repeat-x top;
+}
+
+.u_input_invalid {
+	border: solid 1px red;
+}
+
+.u_input_tip {
+	color: gray;
+}
+
+.u_input_text {
+	padding: 0 3px;
+	padding-top: 3px;
+	height: 18px;
+}
+
+/*--------------------------------------------------------------*/
+.u_spinner {
+	display: inline;
+}
+
+.u_spinner_text {
+	float: left;
+}
+
+.u_spinner_bar {
+	float: left;
+	width: 16px;
+	height: 21px;
+	border: solid 1px #c7c7c7;
+	border-left: none;
+}
+
+.u_spinner_bar_T {
+	height: 10px;
+	_font-size: 0; /*ie6最低div高度*/
+	cursor: pointer;
+	border-bottom: solid 1px #c7c7c7;
+	background-image: url(../images/spinner_bar_top.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #ececec;
+}
+
+.u_spinner_bar_T_over {
+	background-color: #f7f7f7;
+}
+
+.u_spinner_bar_T_down {
+	
+}
+
+.u_spinner_bar_B {
+	height: 9px;
+	_font-size: 0;
+	cursor: pointer;
+	border-top: solid 1px #fff;
+	background-image: url(../images/spinner_bar_bottom.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #ececec;
+}
+
+.u_spinner_bar_B_over {
+	background-color: #f7f7f7;
+}
+
+.u_spinner_bar_B_down {
+	
+}

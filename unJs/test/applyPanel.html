@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>unJs example - applyPanel</title>
+<script type="text/javascript" src="../js/unJs/un_core.js"></script>
+<script type="text/javascript" src="../js/unJs/window.js"></script>
+<script type="text/javascript" src="../js/unJs/tree.js"></script>
+<link href="../style/css/index_layout.css" type="text/css"
+	rel="stylesheet" />
+<link href="../js/unJs/style/grey/css/tree.css" type="text/css"
+	rel="stylesheet" />
+<link href="../js/unJs/style/grey/css/window.css" type="text/css"
+	rel="stylesheet" />
+<script type="text/javascript">
+    /*---------------------------------------**/
+    Un.ready( function() {
+
+        var data = {
+                text : 'branch',
+                nodes : [ {
+                    text : 'node1',
+                    href : 'http://www.baidu.com',
+                    nodes : [ {
+                        text : 'node1_1',
+                        href : 'http://www.baidu.com'
+                    }]
+                }, {
+                    text : 'node1',
+                    href : 'http://www.baidu.com',
+                    nodes : [ {
+                        text : 'node1_1',
+                        href : 'http://www.baidu.com'
+                    }, {
+                        text : 'node1_2',
+                        href : 'http://www.baidu.com',
+                        nodes : [ {
+                            text : 'node1_1',
+                            href : 'http://www.baidu.com'
+                        }, {
+                            text : 'node1_2',
+                            href : 'http://www.baidu.com'
+                        }, {
+                            text : 'node1_2',
+                            href : 'http://www.baidu.com'
+                        } ]
+                    }, {
+                        text : 'node1_2',
+                        href : 'http://www.baidu.com'
+                    } ]
+                }, {
+                    id:'testId',
+                    text : 'node_havaId',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1',
+                    href : 'http://www.baidu.com',
+                    nodes : [ {
+                        text : '叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子',
+                        href : 'http://www.baidu.com'
+                    }, {
+                        text : 'node1_2',
+                        href : 'http://www.baidu.com'
+                    } ]
+                } ]
+            };
+
+        var panel = new Un.ApplyPanel();
+
+        panel.app_input = Un.Box.get('apply_input');
+        panel.apply(panel.app_input);
+        panel.app_input.addListener('focus', panel.show, panel);
+        panel.tree = new Un.RadioTree( {
+            rootVisible : false,
+            root : data
+        });
+        panel.setTitle(panel.tree.root.getText());
+        panel.addContent(panel.tree);
+
+        panel.close=function(){
+            panel.hide();
+            var node = this.tree.getCheckedNode();
+            if (node)
+                panel.app_input.setAttribute('value', node.getText());
+        };
+
+        var ok_btn = new Un.Button( {
+            className : 'u_btn_ok',
+            $ : {
+                innerHTML : 'OK'
+            }
+        });
+        ok_btn.addListener('click', panel.close, panel);
+        panel.head.appendChild(ok_btn);
+
+        Un.document.addListener('click', function(event) {
+            var elem = event.srcElement || e.target;
+            while (elem) {
+                if (elem == panel.e || elem == panel.app_input.e) {
+                    return;
+                }
+                elem = elem.parentNode;
+            }
+            panel.close();
+        });
+    });
+</script>
+<style type="text/css">
+.con_div {
+	margin: 50px;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.green {
+	color: #72c300;
+}
+
+.red {
+	color: #ff8800;
+}
+
+html,body {
+	background: #ededed;
+}
+
+.top {
+	background: #fff url(../style/images/logo.gif) no-repeat center 10px;
+}
+
+.top .content {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-bottom: solid 1px #ccc;
+}
+
+.top .content h3 {
+	color: #58b6cd;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0 0 35px 130px;
+}
+
+.center {
+
+}
+
+.center .content {
+	text-align: center;
+}
+
+.center .text {
+	margin: 30px 0;
+}
+
+.center .text span {
+	margin: 0 30px;
+}
+
+.bottom {
+	background: #fff;
+	text-align: center;
+}
+
+.bottom .content {
+	border-top: solid 1px #ccc;
+	padding: 10px 50px;
+}
+
+.bottom .left {
+	margin: 0 100px;
+}
+
+.bottom .left a {
+	margin: 0 5px;
+}
+
+.bottom .right {
+	margin: 0 100px;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+<div class="content">
+<h3>Huxh.un</h3>
+</div>
+</div>
+<div id="center" class="center">
+<div class="content">
+<div class="text">applyPanel<span>test a in:ie6,ie7,ie8,firefox</span> <input
+	id="apply_input" value="请选择" style="padding: 10px" /></div>
+</div>
+
+</div>
+<div class="bottom">
+<div class="content"></div>
+<span class="left"><a href="http://hi.baidu.com/huxiaohang"
+	title="Home">Blog</a>|<a href="http://hi.baidu.com/huxiaohang/profile"
+	title="About">About</a> </span><span class="right"> <span class="green">HUHANG1986</span>
+&copy; 2010 All Rights Reserved</span></div>
+</body>
+</html>

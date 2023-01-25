@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+
+html,body {
+	height: 100%;
+}
+
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th
+	{
+	margin: 0;
+	padding: 0;
+}
+
+body,button,input,select,textarea {
+	font-family: verdana, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif
+		;
+	font-size: 12px;
+}
+
+img {
+	border: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+a {
+	text-decoration: none;
+	color: #50acc3;
+	color: #005580;
+}
+
+a:link {
+	
+}
+
+a:visited {
+	
+}
+
+a:hover {
+	color: #ff6600;
+}
+
+a:active {
+	color: #ff6600;
+}
+
+code {
+	font-family: "Lucida Console";
+	line-height: 120%;
+}
+
+.clear {
+	clear: both;
+}
+
+.error {
+	color: #d90000;
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>unJs example</title>
+<script type="text/javascript" src="../js/unJs/un_core.js"></script>
+<script type="text/javascript" src="../js/unJs/tree.js"></script>
+<link href="../js/unJs/style/grey/css/tree.css" type="text/css"
+	rel="stylesheet" />
+<script type="text/javascript">
+    Un.ready( function() {
+        var node = new Un.Tree.Node( {
+            text : 'node1_test',
+            href : 'http://www.baidu.com',
+            nodes : []
+        });
+        var tree = new Un.Tree({
+            defaultRadioId:'testId',
+            root:{
+            text : 'branch',
+            nodes : [ {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }, node ]
+            }, {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1_2_empty',
+                    href : 'http://www.baidu.com',
+                    nodes : []
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com'
+                } ]
+            }, {
+                id:'testId',
+                text : 'node_havaId',
+                href : 'http://www.baidu.com'
+            }, {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com'
+                } ]
+            } ]
+        }});
+        tree.render('tree');
+        for ( var i = 0; i < 3; i++) {
+            node.grow( [ {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1_2_?',
+                    href : 'http://www.baidu.com'
+                } ]
+            } ]);
+        }
+
+        var radioTree = new Un.RadioTree({
+        	rootVisible : false,
+            defaultRadioId:'testId',
+            root:{
+            text : 'branch',
+            nodes : [ {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }]
+            }, {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com',
+                    nodes : [ {
+                        text : 'node1_1',
+                        href : 'http://www.baidu.com'
+                    }, {
+                        text : 'node1_2',
+                        href : 'http://www.baidu.com'
+                    }, {
+                        text : 'node1_2',
+                        href : 'http://www.baidu.com'
+                    } ]
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com'
+                } ]
+            }, {
+                id:'testId',
+                text : 'node_havaId',
+                href : 'http://www.baidu.com'
+            }, {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : '叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子叶子',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com'
+                } ]
+            } ]
+        }});
+        radioTree.render('radioTree');
+
+        var checkTree = new Un.CheckTree({
+            defaultRadioId:'testId',
+            root:{
+            text : 'branch',
+            nodes : [ {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }]
+            }, {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com',
+                    nodes : [ {
+                        text : 'node1_1',
+                        href : 'http://www.baidu.com'
+                    }, {
+                        text : 'node1_2',
+                        href : 'http://www.baidu.com'
+                    }, {
+                        text : 'node1_2',
+                        href : 'http://www.baidu.com'
+                    } ]
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com'
+                } ]
+            }, {
+                id:'testId',
+                text : 'node_havaId',
+                href : 'http://www.baidu.com'
+            }, {
+                text : 'node1',
+                href : 'http://www.baidu.com',
+                nodes : [ {
+                    text : 'node1_1',
+                    href : 'http://www.baidu.com'
+                }, {
+                    text : 'node1_2',
+                    href : 'http://www.baidu.com'
+                } ]
+            } ]
+        }});
+        checkTree.render('checkTree');
+
+        //tree.collapseAll();
+        var arr = tree.getCheckedNodes();
+        //alert(arr.length);
+
+        var collapseAll=Un.Element.get('collapseAll');
+        collapseAll.addListener('click',tree.collapseAll,tree);
+        collapseAll.addListener('click',radioTree.collapseAll,radioTree);
+        collapseAll.addListener('click',checkTree.collapseAll,checkTree);
+
+        var expandAll=Un.Element.get('expandAll');
+        expandAll.addListener('click',tree.expandAll,tree);
+        expandAll.addListener('click',radioTree.expandAll,radioTree);
+        expandAll.addListener('click',checkTree.expandAll,checkTree);
+
+        var resetChecked=Un.Element.get('resetChecked');
+        resetChecked.addListener('click',radioTree.resetChecked,radioTree);
+        resetChecked.addListener('click',checkTree.resetChecked,checkTree);
+
+        //radioTree.showRoot();
+
+        //alert(tree.getNodeById('testId'));
+    });
+</script>
+<style type="text/css">
+.content {
+	text-align: center;
+	padding: 30px 50px;
+}
+
+.buttons {
+	padding: 20px 0;
+}
+
+.buttons button {
+	margin: 0 10px;
+}
+
+.treeArea {
+	float: left;
+	width: 180px;
+	margin: 0 50px;
+	text-align: left;
+	overflow: auto;
+	_position: relative;
+}
+</style>
+</head>
+<body>
+<div class="content" id="content">
+<div class="buttons">
+<button id="collapseAll">collapseAll</button>
+<button id="expandAll">expandAll</button>
+<button id="resetChecked">resetChecked</button>
+</div>
+<div>
+<div class="treeArea" id="tree"><span style="font-weight: bold;">tree：</span></div>
+<div class="treeArea" id="radioTree"><span
+	style="font-weight: bold;">radioTree：</span></div>
+<div class="treeArea" id="checkTree"><span
+	style="font-weight: bold;">checkTree：</span></div>
+</div>
+</div>
+
+</body>
+</html>

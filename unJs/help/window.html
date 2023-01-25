@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Window</title>
+<link href="style/css/class.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="head">
+<div class="tools"><a href="#config">配置项</a>|<a href="#method">方法</a>|<a
+	href="#event">事件</a></div>
+<table class="table_1">
+	<tbody>
+		<tr>
+			<th class="label td_1">类</th>
+			<th>
+			<h2>Un.Window</h2>
+			</th>
+		</tr>
+		<tr>
+			<td class="label td_1">继承自</td>
+			<td><a>Un.Box</a></td>
+		</tr>
+	</tbody>
+</table>
+<pre class="code">
+<code>
+var win = new Un.Window( {
+    title : 'UN.window',
+    x:50,
+    y:80,
+    closeMethod:'hide'
+});
+
+win.show();
+</code>
+</pre></div>
+<div class="content"><a name="config"></a>
+<table class="table_2">
+	<tbody>
+		<tr>
+			<th class="title" colspan="2">配置项</th>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>x</b><span class="default label">默认值:&nbsp;</span>null
+			<div class="description">组件的起始位置横坐标（null则居中）。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>y</b><span class="default label">默认值:&nbsp;</span>null
+			<div class="description">组件的起始位置纵坐标（null则居中）。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">String</td>
+			<td><b>title</b><span class="default label">默认值:&nbsp;</span>''
+			<div class="description">显示在组件头部的文本标题。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"><span>Number</span></td>
+			<td><b>width</b><span class="default label">默认值:&nbsp;</span>500
+			<div class="description">此组件的宽度（单位象素）。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>height</b><span class="default label">默认值:&nbsp;</span>310
+			<div class="description">此组件的高度（单位象素）。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>minWidth</b><span class="default label">默认值:&nbsp;</span>180
+			<div class="description">此组件的最低宽度（单位象素）。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>minHeight</b><span class="default label">默认值:&nbsp;</span>111
+			<div class="description">此组件的最低高度（单位象素）。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Boolean</td>
+			<td><b>maximizable</b><span class="default label">默认值:&nbsp;</span>true
+			<div class="description">窗口是否可以最大化。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Boolean</td>
+			<td><b>closable</b><span class="default label">默认值:&nbsp;</span>true
+			<div class="description">窗口是否可以关闭。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">String</td>
+			<td><b>closeMethod</b><span class="default label">默认值:&nbsp;</span>'destroy'
+			<div class="description">窗口的关闭方式 ('destroy':销毁;'hide':隐藏)。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Boolean</td>
+			<td><b>draggable</b><span class="default label">默认值:&nbsp;</span>true
+			<div class="description">窗口是否可以拖动。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Boolean</td>
+			<td><b>resizable</b><span class="default label">默认值:&nbsp;</span>true
+			<div class="description">窗口是否可以调整大小。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Boolean</td>
+			<td><b>modal</b><span class="default label">默认值:&nbsp;</span>false
+			<div class="description">窗口显示时是否对其后面的一切内容进行遮罩。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Boolean</td>
+			<td><b>hasShadow</b><span class="default label">默认值:&nbsp;</span>true
+			<div class="description">窗口是否有阴影。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>headHeight</b><span class="default label">默认值:&nbsp;</span>32
+			<div class="description">窗口头部的高度。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>borderWidth</b><span class="default label">默认值:&nbsp;</span>7
+			<div class="description">窗口边框的宽度。</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>
+<a name="method"></a>
+<table class="table_2">
+	<tbody>
+		<tr>
+			<th class="title" colspan="2">方法</th>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>setTitle(String t)</b>
+			<div class="description">设置窗口标题。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>moveToCenter()</b>
+			<div class="description">将窗口移动到正中间。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>maximize()</b>
+			<div class="description">窗口最大化。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>restore()</b>
+			<div class="description">窗口还原。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>reset()</b>
+			<div class="description">窗口重置为初始状态。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>setCloseMethod(String m)</b>
+			<div class="description">设置窗口的关闭方式('destroy':销毁;'hide':隐藏)。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>addContent(Un.Element/HtmlElement e)</b>
+			<div class="description">在窗口的主体里加入内容。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="title_2" colspan="2">从类<a>Un.Box</a>继承的方法</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>getWidth()</b>
+			<div class="description">获得窗口宽度。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1">Number</td>
+			<td><b>getHeight()</b>
+			<div class="description">获得窗口高度。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>setWidth(Number w)</b>
+			<div class="description">设置窗口宽度。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>setHeight(Number h)</b>
+			<div class="description">设置窗口高度。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>setSize(Number w,Number h)</b>
+			<div class="description">设置窗口大小。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="title_2" colspan="2">从类<a>Un.Element</a>继承的方法</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>hide()</b>
+			<div class="description">隐藏窗口。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>show()</b>
+			<div class="description">显示窗口。</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<a name="event"></a>
+<table class="table_2">
+	<tbody>
+		<tr>
+			<th class="title" colspan="2">事件</th>
+		</tr>
+		<tr>
+			<td class="td_1">Boolean</td>
+			<td><b>beforeclose</b>
+			<div class="description">窗口关闭前触发。若监听的事件之一返回false则取消关闭动作。</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="td_1"></td>
+			<td><b>close</b>
+			<div class="description">窗口关闭后触发。</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</body>
+</html>
