@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+
+@import "reset.css";
+
+html {
+	overflow: auto; /*去掉ie默认显的示空滚动条*/
+}
+
+html,body {
+	height: 100%;
+}
+
+.top {
+	position: absolute;
+	height: 82px;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.center {
+	position: absolute;
+	top: 82px;
+	right: 0;
+	bottom: 50px;
+	left: 0;
+}
+
+.bottom {
+	position: absolute;
+	height: 50px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/*IE6*/
+.top {
+	
+}
+
+html {
+	_padding: 82px 0 50px 0;
+}
+
+.top {
+	_width: 100%;
+}
+
+.center {
+	_position: relative;
+	_top: 0;
+	_height: 100%;
+}
+
+.bottom {
+	_width: 100%;
+}
+/*--------------------------*/
