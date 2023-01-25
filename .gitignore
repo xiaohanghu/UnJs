@@ -1,0 +1,59 @@
+build/
+**/build/
+classes
+
+# Gradle
+.gradle/
+**/.gradle/
+**/.gradletasknamecache
+
+# VIM
+*.swp
+*~
+tags
+
+**/deployboard.instructions
+.gradle_task_tracking.json
+
+# Eclipse
+workbench.xmi
+
+# Android Studio
+local.properties
+
+.idea/
+*.iml
+*.ipr
+*.iws
+**/*.iml
+out/
+.classpath
+**/.classpath
+.project
+**/.project
+.settings/
+**/.settings/
+# Ignore OS X Desktop Services store
+.DS_Store
+*.DS_Store
+**/.DS_Store
+.tddium*
+**/*~
+/.shelf
+
+# NetBeans
+.nb-gradle/
+.solano*
+
+# log files
+*.log
+
+reports/
+build-scan-data/
+caches/
+daemon/
+native/
+
+# Unison
+**/.unison*
+
